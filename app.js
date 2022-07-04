@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const path = require("path");
 require("./models/db-connection.js");
-
+require("./api-requests/imdbrequest.js");
 // initializing port
 app.listen(port, () => console.log("port initialized"));
 // serving static files

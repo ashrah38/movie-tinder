@@ -1,5 +1,8 @@
+require("dotenv").config();
+const db_username = process.env.DB_USERNAME;
+const db_password = process.env.DB_PASSWORD;
 const mongoose = require("mongoose");
-const url = `mongodb+srv://moviefinder:iVZGHKiYifsLuV85@moviefinder.r81cs.mongodb.net/?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${db_username}:${db_password}@moviefinder.r81cs.mongodb.net/?retryWrites=true&w=majority`;
 const connectionParams = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
