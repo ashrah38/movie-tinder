@@ -14,3 +14,4 @@ app.use(
 app.use("./assets", express.static("assets"));
 // importing routes
 app.use("/", require("./routes/index.js"));
+app.use("/movies", require("./routes/retrieving-movies.js"));
