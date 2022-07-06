@@ -1,14 +1,16 @@
 const express = require("Express");
-const movieModel = require("../models/movies-model.js");
 const router = express.Router();
+const movieModel = require("../models/movies-model.js");
 // users can pick 3 genres at the choose category screen
 // then, movies fitting 2 of the 3 genres will be retrieved from the database
 // each user will have a list of movies they have already viewed - imdbid will be cross-checked to ensure that there are no duplicates.
 
 router.get("/", (req, res) => {
-  if (req.body) {
-    const genres = req.body.genres;
-    const alreadyWatched = req.body.imdbids;
+  if (req.query) {
+    const genreOne = req.query.genreOne;
+    const genreTwo = req.query.genreTwo;
+    const genreThree = req.query.genreThree;
+    console.log(genreOne);
   }
   // Testing purposes
   const genreOne = "Action";
@@ -20,7 +22,7 @@ router.get("/", (req, res) => {
       genres: { $regex: genreTwo, $options: "i" },
       genres: { $regex: genreThree, $options: " i" },
     })
-    .then((res) => res.send(JSON.stringify(res)));
+    .then((response) => res.send(JSON.stringify(response)));
 });
 
 module.exports = router;
