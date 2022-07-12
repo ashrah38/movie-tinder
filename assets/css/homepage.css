@@ -53,12 +53,13 @@
 .card-display {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .loader {
-  position: relative;
+  position: absolute;
   border: 16px solid #f3f3f3;
   border-top: 16px solid #3498db;
   border-radius: 50%;
@@ -90,7 +91,7 @@
   top: 0px;
   z-index: 40;
   width: 100%;
-  height: min(620px, 82vh);
+  height: min(620px, 75vh);
   will-change: transform;
   transition: all 0.3s ease-in-out;
   cursor: -webkit-grab;
@@ -136,4 +137,23 @@
   object-fit: fill;
   z-index: 10;
   pointer-events: none;
+}
+
+.like-dislike-btns {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.like-btn {
+  font-size: 70px;
+  color: rgb(252, 82, 111);
+  cursor: pointer;
+}
+
+.dislike-btn {
+  font-size: 70px;
+  color: #aaa;
+  cursor: pointer;
 }
