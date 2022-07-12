@@ -1,3 +1,7 @@
+body {
+  background-color: #3498db;
+}
+
 .container-fluid {
   overflow: hidden;
 }
@@ -51,6 +55,7 @@
 }
 
 .card-display {
+  height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
